@@ -1,0 +1,177 @@
+{% extends 'restaurant/base.html' %}
+{% block title %}Réservations — Braisonnable{% endblock %}
+{% block main_class %}page-secondaire{% endblock %}
+
+{% block content %}
+<section class="reservation-section">
+  <div class="reservation-container">
+    <h2 class="section-title">Réservez votre table</h2>
+    <p class="subtitle">Nous sommes ouverts tous les jours de 12h à 23h</p>
+
+    <form method="POST" action="{% url 'reservations' %}" class="reservation-form">
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
+        <div class="form-errors">
+          {% for error in form.non_field_errors %}
+            <p class="error-msg">{{ error }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="form-group">
+        <label for="nom">Nom *</label>
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          required
+          class="form-control"
+          value="{{ form.nom.value|default_if_none:'' }}"
+        />
+        {% if form.nom.errors %}
+          <div class="field-error">
+            {% for error in form.nom.errors %}
+              <p class="error-msg">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="prenom">Prénom *</label>
+        <input
+          type="text"
+          id="prenom"
+          name="prenom"
+          required
+          class="form-control"
+          value="{{ form.nom.value|default_if_none:'' }}"
+        />
+        {% if form.nom.errors %}
+          <div class="field-error">
+            {% for error in form.nom.errors %}
+              <p class="error-msg">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="form-control"
+          value="{{ form.email.value|default_if_none:'' }}"
+        />
+        {% if form.email.errors %}
+          <div class="field-error">
+            {% for error in form.email.errors %}
+              <p class="error-msg">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">Téléphone</label>
+        <input
+          type="tel"
+          id="telephone"
+          name="telephone"
+          class="form-control"
+          value="{{ form.telephone.value|default_if_none:'' }}"
+        />
+        {% if form.telephone.errors %}
+          <div class="field-error">
+            {% for error in form.telephone.errors %}
+              <p class="error-msg">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="nombre_personnes">Nombre de personnes *</label>
+        <select id="nombre_personnes" name="nombre_personnes" required class="form-control">
+          <option value="">-- Choisissez --</option>
+          {% for i in "123456" %}
+            <option value="{{ i }}" {% if form.nombre_personnes.value == i %}selected{% endif %}>
+              {{ i }} personne{% if i != "1" %}s{% endif %}
+            </option>
+          {% endfor %}
+        </select>
+        <small>Pour plus de 6 personnes, merci d'appeler directement.</small>
+        {% if form.nombre_personnes.errors %}
+          <div class="field-error">
+            {% for error in form.nombre_personnes.errors %}
+              <p class="error-msg">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date *</label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          required
+          class="form-control"
+          min="{{ today }}"
+          value="{{ form.date.value|default_if_none:'' }}"
+        />
+        {% if form.date.errors %}
+          <div class="field-error">
+            {% for error in form.date.errors %}
+              <p class="error-msg">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="heure">Heure *</label>
+        <select id="heure" name="heure" required class="styled-select">
+          {% for h in horaires %}
+            <option value="{{ h }}" {% if form.heure.value == h %}selected{% endif %}>{{ h }}</option>
+          {% endfor %}
+        </select>
+        {% if form.heure.errors %}
+          <div class="field-error">
+            {% for error in form.heure.errors %}
+              <p class="error-msg">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message (optionnel)</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Allergies, préférences…"
+          class="form-control"
+        >{{ form.message.value|default_if_none:'' }}</textarea>
+        {% if form.message.errors %}
+          <div class="field-error">
+            {% for error in form.message.errors %}
+              <p class="error-msg">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <button type="submit" class="btn-reserver">Réserver</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+

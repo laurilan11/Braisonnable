@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Braisonnable {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'images/logoBraiso.png' %}" type="image/png">
+</head>
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+</script>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <h1 class="logo"> <a href="{% url 'home' %}"><img src="{% static 'images/logo_braisonnable_transparent.png' %}" alt="Braisonnable" class="logo-img"></a></h1>
+            <nav>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul class="nav-links">
+                    <li><a href="{% url 'menu' %}">Menu</a></li>
+                    <li><a href="{% url 'reservations' %}">Réservations</a></li>
+                    <li><a href="{% url 'about' %}">Histoire</a></li>
+                    <li><a href="mailto:braisonnable_steakhouse@outlook.com">Offre d'emploi</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="{% block main_class %}{% endblock %}">
+        {% block content %}{% endblock %}
+    </main>
+
+<footer>
+  <section class="footer-main">
+    <!-- Bloc pages -->
+    <div class="nav_basdepage">
+      <h3>Pages</h3>
+      <ul class="foot_princ">
+        <li><a href="{% url 'menu' %}">Menu</a></li>
+        <li><a href="{% url 'reservations' %}">Réservations</a></li>
+        <li><a href="{% url 'about' %}">Histoire</a></li>
+        <li><a href="mailto:braisonnable_steakhouse@outlook.com">Offre d'emploi</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Bloc infos + réseaux -->
+    <div class="info_resto">
+      <h3>Braisonnable</h3>
+        <ul class="info_resto_lettres">
+            <li><p>Rue Henri Deleers 4, 1070 Anderlecht</p></li>
+            <li><a href="mailto:braisonnable_steakhouse@outlook.com">braisonnable_steakhouse@outlook.com</a></li>
+            <li><a href="tel:+3226483151">02 648 31 51</a></li>
+        </ul>
+      </p>
+      <div class="social-icons">
+        <a href="#"><img src="{% static 'images/facebook.png' %}" alt="Facebook" /></a>
+        <a href="#"><img src="{% static 'images/facebook.png' %}" alt="Instagram" /></a>
+      </div>
+    </div>
+
+    <!-- Bloc horaires -->
+    <div class="Heures">
+      <h3>Horaires</h3>
+      <ul class="Heures_foot">
+        <li><p class="Heures_foot_day">Lundi</p> <p class="Heures_foot_hours">12h-23h</p></li>
+        <li><p class="Heures_foot_day">Mardi</p> <p class="Heures_foot_hours">12h-23h</p></li>
+        <li><p class="Heures_foot_day">Mercredi</p> <p class="Heures_foot_hours">12h-23h</p></li>
+        <li><p class="Heures_foot_day">Jeudi</p> <p class="Heures_foot_hours">12h-23h</p></li>
+        <li><p class="Heures_foot_day">Vendredi</p> <p class="Heures_foot_hours">12h-23h</p></li>
+        <li><p class="Heures_foot_day">Samedi</p> <p class="Heures_foot_hours">12h-23h</p></li>
+        <li><p class="Heures_foot_day">Dimanche</p> <p class="Heures_foot_hours">12h-23h</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Ligne tout en bas -->
+  <section class="reste_basdepage">
+    <p class="copyright">&copy; 2025 Braisonnable</p>
+    <a class="cgv" href="#">Conditions générales de vente</a>
+  </section>
+</footer>
+
+</body>
+</html>

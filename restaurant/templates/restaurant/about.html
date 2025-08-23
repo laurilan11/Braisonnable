@@ -1,0 +1,68 @@
+{% extends 'restaurant/base.html' %}
+{% load static %}
+{% block title %}Histoire — Braisonnable{% endblock %}
+{% block main_class %}page-secondaire{% endblock %}
+{% block content %}
+<section class="about_titre">
+    <div class="abintro1">
+        <div class="abintro2">
+            <h2>BRAISONNABLE<br>HISTOIRE</h2>
+        </div>
+  </div>
+</section>
+
+<section class="history-section">
+  <div class="history-content">
+    <h2>Notre histoire</h2>
+    <p>
+      Né de la passion de trois amis pour la gastronomie, Braisonnable est un lieu où se croisent authenticité, créativité et convivialité. Nos débuts à Anderlecht ont une mission : proposer une cuisine sincère, faite maison, avec des produits locaux et de saison.
+    </p>
+    <p>
+      Chaque plat raconte une histoire. Celle de nos producteurs, de nos racines, mais aussi de notre volonté de moderniser la tradition, sans jamais la trahir. Nous croyons en une cuisine qui rassemble, qui émeut et qui fait voyager.
+    </p>
+        <!-- Carrousel -->
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="{% static 'images/photoentrée.jpg' %}" alt="Entrée" class="historia-photo">
+      </div>
+      <div class="slide fade">
+        <img src="{% static 'images/photo22.jpg' %}" alt="Intérieur1" class="historia-photo">
+      </div>
+      <div class="slide fade">
+        <img src="{% static 'images/photo3.jpg' %}" alt="Intérieur2" class="historia-photo">
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+<section class="team-section">
+  <div class="team-container">
+    <h2>Notre équipe</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="images/chef.jpg" alt="Chef">
+        <h3>Leonte Lauric</h3>
+        <p>Chef exécutif – passionné par la cuisine fusion et les produits bruts, il conçoit des menus comme des œuvres d’art.</p>
+      </div>
+      <div class="team-member">
+        <img src="images/sommeliere.jpg" alt="Sommelière">
+        <h3>Clara B.</h3>
+        <p>Sommelière – curieuse et exigeante, elle sélectionne chaque vin avec justesse pour sublimer les saveurs de chaque assiette.</p>
+      </div>
+      <div class="team-member">
+        <img src="images/service.jpg" alt="Responsable de salle">
+        <h3>Yanis M.</h3>
+        <p>Responsable de salle – chaleureux et attentionné, il vous accueille comme à la maison, avec une attention portée à chaque détail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+{% block extra_js %}
+<script src="{% static 'js/slideshow.js' %}"></script>
+{% endblock %}
+
+
+
+{% endblock %}

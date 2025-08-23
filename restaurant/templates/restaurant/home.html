@@ -1,0 +1,76 @@
+{% extends 'restaurant/base.html' %}
+{% load static %}
+{% block title %}Braisonnable{% endblock %}
+{% block content %}
+
+<div class="hero">
+    <img src="{% static 'images/photoentree.jpg' %}" alt="Photo d'accueil" class="hero-img">
+    <h1 class="hero-title">
+        BRAISONNABLE<br>
+        <span class="subline">Steakhouse</span>
+    </h1>
+    <a href="{% url 'reservations' %}" class="hero-btn">Réservations</a>
+</div>
+
+<section class="intro-section">
+    <h2>Notre histoire</h2>
+    <div class="intro-content">
+        <div class="intro-text">
+            <p>
+                Braisonnable est né du désir de proposer une expérience culinaire accessible mais raffinée,
+                au cœur d’Anderlecht. Une passion commune, une vision moderne de la gastronomie et une ambiance chaleureuse...<br>
+                Anciennement restaurant Luso, nous avons tout rénové afin de vous offrir une expérience unique.
+            </p>
+            <a href="{% url 'about' %}" class="btn-outline">En savoir plus</a>
+        </div>
+        <div class="intro-image">
+            <img src="{% static 'images/photoentrée1nouvelle.png' %}" alt="Photo du restaurant">
+        </div>
+    </div>
+</section>
+
+<section class="menu-preview">
+    <h2>Notre menu</h2>
+    <div class="menu-items">
+        <div class="menu-item">
+            <h3>De la viande à toutes les sauces </h3>
+            <p>Vous pourrez retrouvez dans notre restaurant toute sorte de viande, à tous les gouts et avec son unique sauce Braisonnable.</p>
+        </div>
+    </div>
+    <a href="{% url 'menu' %}" class="btn-outline">Voir le menu complet</a>
+</section>
+
+<section class="contact-cta">
+    <h2>Une table vous attend</h2>
+    <p>Contactez-nous pour toute question ou réservez directement en ligne. Nous serons ravis de vous accueillir.</p>
+    <div class="contact-content">
+        <div class="reserve">
+            <h3> CONTACT</h3>
+            <p> Rue Henri Deleers, 4 <br>
+                1070 Anderlecht <br> <br>
+                Mail : <a href="mailto:braisonnable_steakhouse@outlook.com">braisonnable_steakhouse@outlook.com</a> <br>
+                <a href="tel:+3226483151">Tél: 02 648 31 51 </a><br>
+            </p>
+            <a href="{% url 'reservations' %}" class="btn-primary">Réserver une table</a>
+            <a href="{% url 'contact' %}" class="btn-primary">Contactez-nous</a>
+        </div>
+        <div class="contactation">
+            <div class="map">
+            <h3> ADRESSE</h3>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps?q=Rue+Henri+Deleers+4,+1070+Anderlecht,+Belgium&output=embed"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

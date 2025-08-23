@@ -1,0 +1,87 @@
+{% extends 'restaurant/base.html' %}
+{% block title %}Menu — Braisonnable{% endblock %}
+{% block main_class %}page-secondaire{% endblock %}
+{% block content %}
+
+<section class="menu-intro">
+  <div class="intro1">
+    <div class="intro2">
+      <h2>NOTRE CARTE</h2>
+      <p>Découvrez nos suggestions inspirées des saisons, composées à base de produits frais, locaux et de qualité.</p>
+    </div>
+  </div>
+</section>
+
+<div class="menu-navigation">
+  <section class="manu-navi">
+            <nav class="menu-nav">
+              <a href="#entrees">Entrées</a>
+              <a href="#plats">Plats</a>
+              <a href="#desserts">Desserts</a>
+            </nav>
+  </section>
+</div>
+
+<!-- Section menu -->
+<section class="menu-section" id="entrees">
+  <h2>Entrées</h2>
+  <ul class="menu-list">
+    <li class="menu-itemo">
+      <div class="item-text">
+        <h4>Burrata & tomates anciennes</h4>
+        <p>Crème de basilic, huile d’olive pressée à froid</p>
+      </div>
+      <span class="price">12€</span>
+    </li>
+    <li class="menu-itemo">
+      <div class="item-text">
+        <h4>Croquettes de crevettes</h4>
+        <p>Accompagnées d’un mesclun de saison</p>
+      </div>
+      <span class="price">14€</span>
+    </li>
+  </ul>
+</section>
+
+<section class="menu-section" id="plats">
+  <h2>Plats</h2>
+  <ul class="menu-list">
+    <li class="menu-itemo">
+      <div class="item-text">
+        <h4>Pavé de saumon rôti</h4>
+        <p>Purée maison, légumes grillés et sauce vierge</p>
+      </div>
+      <span class="price">22€</span>
+    </li>
+    <li class="menu-itemo">
+      <div class="item-text">
+        <h4>Filet pur de bœuf (origine Belgique)</h4>
+        <p>Frites maison, salade, sauce au poivre</p>
+      </div>
+      <span class="price">28€</span>
+    </li>
+  </ul>
+</section>
+
+<section class="menu-section" id="desserts">
+  <h2>Desserts</h2>
+  <ul class="menu-list">
+    <li class="menu-itemo">
+      <div class="item-text">
+        <h4>Tiramisu maison</h4>
+        <p>Recette traditionnelle italienne</p>
+      </div>
+      <span class="price">8€</span>
+    </li>
+    <li class="menu-itemo">
+      <div class="item-text">
+        <h4>Moelleux au chocolat</h4>
+        <p>Servi tiède, glace vanille artisanale</p>
+      </div>
+      <span class="price">9€</span>
+    </li>
+  </ul>
+</section>
+
+
+{% endblock %}

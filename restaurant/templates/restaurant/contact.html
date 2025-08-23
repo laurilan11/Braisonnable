@@ -1,0 +1,136 @@
+{% extends 'restaurant/base.html' %}
+{% block title %}Contact — Braisonnable{% endblock %}
+{% block main_class %}page-secondaire{% endblock %}
+{% block content %}
+<section class="contact_titre">
+    <div class="intro1">
+        <div class="intro2">
+            <h2>BRAISONNABLE<br>CONTACT</h2>
+        </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <h2>Contactez-nous</h2>
+  <p>Une question ? Une demande ? Écrivez-nous, nous vous répondrons rapidement.</p>
+
+  <form method="post" action="{% url 'contact' %}" class="contact-form">
+    {% csrf_token %}
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="nom">NOM *</label>
+        <input type="text" name="nom" id="nom" required>
+      </div>
+
+      <div class="form-group">
+        <label for="prenom">PRENOM *</label>
+        <input type="text" name="prenom" id="prenom" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">EMAIL *</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">NUMERO DE TELEPHONE</label>
+        <input type="tel" name="telephone" id="telephone">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">MESSAGE *</label>
+      <textarea name="message" id="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="form_btn-primary">Envoyer</button>
+  </form>
+</section>
+
+<section class="contact-infos-section">
+  <div class="contact-infos-container">
+    <div class="contact-details">
+      <h3>Informations de contact</h3>
+      <p>Rue Henri Deleers, 4<br>1070 Anderlecht</p>
+      <p>Mail : <a href="mailto:braisonnable_steakhouse@outlook.com">braisonnable_steakhouse@outlook.com</a></p>
+      <p>Téléphone : <a href="tel:+3226483151">02 648 31 51</a></p>
+    </div>
+
+    <div class="contact-map">
+      <iframe
+        src="https://www.google.com/maps?q=Rue+Henri+Deleers+4,+1070+Anderlecht,+Belgium&output=embed"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="opening_hours">
+  <div class="ope1">
+    <div class="ope2">
+      <div class="ope_week">
+        <div class="ope_day">
+          <div class="ope_header">
+            <div class="ope_weekname">Lundi</div>
+          </div>
+          <div class="ope_stretch">
+            <div class="ope_stretch_text">12h-23h</div>
+          </div>
+        </div>
+        <div class="ope_day">
+          <div class="ope_header">
+            <div class="ope_weekname">Mardi</div>
+          </div>
+          <div class="ope_stretch">
+            <div class="ope_stretch_text">12h-23h</div>
+          </div>
+        </div>
+        <div class="ope_day">
+          <div class="ope_header">
+            <div class="ope_weekname">Mercredi</div>
+          </div>
+          <div class="ope_stretch">
+            <div class="ope_stretch_text">12h-23h</div>
+          </div>
+        </div>
+        <div class="ope_day">
+          <div class="ope_header">
+            <div class="ope_weekname">Jeudi</div>
+          </div>
+          <div class="ope_stretch">
+            <div class="ope_stretch_text">12h-23h</div>
+          </div>
+        </div>
+        <div class="ope_day">
+          <div class="ope_header">
+            <div class="ope_weekname">Vendredi</div>
+          </div>
+          <div class="ope_stretch">
+            <div class="ope_stretch_text">12h-23h</div>
+          </div>
+        </div>
+        <div class="ope_day">
+          <div class="ope_header">
+            <div class="ope_weekname">Samedi</div>
+          </div>
+          <div class="ope_stretch">
+            <div class="ope_stretch_text">12h-23h</div>
+          </div>
+        </div>
+        <div class="ope_day">
+          <div class="ope_header">
+            <div class="ope_weekname">Dimanche</div>
+          </div>
+          <div class="ope_stretch">
+            <div class="ope_stretch_text">12h-23h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
