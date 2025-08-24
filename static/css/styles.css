@@ -656,16 +656,21 @@ main.page-secondaire {
     .menu-nav {
         flex-wrap: wrap; /* autorise plusieurs lignes */
     }
-
-    .menu-nav a {
-        font-size: 0.8rem;
-    }
     .menu-navigation {
         height : 150px;
 
     }
     .menu-nav a {
+        font-size: 0.8rem;
         flex: 0 0 23%; /* chaque lien prend exactement un tiers de la ligne */
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .menu-nav a {
+        font-size: 0.7rem;
+        flex: 0 0 15%; /* chaque lien prend exactement un tiers de la ligne */
         text-align: center;
     }
 }
