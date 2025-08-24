@@ -23,6 +23,7 @@ a:visited {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     transition: background-color 0.3s ease;
+
 }
 
 .header-container {
@@ -369,6 +370,10 @@ nav a {
 .slide {
   display: none;
 }
+.slide.cool img {
+  object-fit: contain; /* affiche l’image en entier */
+  background-color: black; /* bandes noires sur les côtés */
+}
 
 .historia-photo {
   width: 100%;
@@ -549,13 +554,16 @@ main.page-secondaire {
 
 .menu-nav {
     display: flex;
+    justify-content: center;  /* centre les liens horizontalement */
+    flex-wrap: nowrap;        /* par défaut, tout sur une seule ligne */
+    gap: 20px;                /* espace entre les liens */
 }
 
 .menu-nav a {
     color: #CC0000;
-    font-weight: bold;
+    font-weight: normal;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     position: relative;
 }
 
@@ -632,6 +640,9 @@ main.page-secondaire {
     .menu-list {
         grid-template-columns: 1fr;
     }
+    .menu-section {
+        scroll-margin-top: 280px;
+    }
 
     .menu-item {
         flex-direction: column;
@@ -642,9 +653,22 @@ main.page-secondaire {
         margin-top: 8px;
         align-self: flex-end;
     }
+    .menu-nav {
+        flex-wrap: wrap; /* autorise plusieurs lignes */
+    }
+
+    .menu-nav a {
+        font-size: 0.8rem;
+    }
+    .menu-navigation {
+        height : 150px;
+
+    }
+    .menu-nav a {
+        flex: 0 0 23%; /* chaque lien prend exactement un tiers de la ligne */
+        text-align: center;
+    }
 }
-
-
 
 /* ===================== CONTACT CTA ===================== */
 .contact-cta {

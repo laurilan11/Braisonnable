@@ -7,7 +7,6 @@ from django.urls import reverse
 from .forms import ReservationForm
 from django.shortcuts import redirect
 from django.contrib import messages
-from .models import Reservation
 
 
 def home(request):
@@ -45,7 +44,7 @@ def reservations(request):
                     f"le {date_formatee} à {reservation.heure} a bien été enregistrée.\n\n"
                     "À bientôt chez Braisonnable !"
                 ),
-                from_email="gablauric@gmail.com",  # Remplace par ton email Gmail
+                from_email="laurilanscrl@gmail.com",  # Remplace par ton email Gmail
                 recipient_list=[reservation.email],
                 fail_silently=False,
             )
@@ -71,7 +70,7 @@ def contact(request):
             subject='Nouveau message de contact depuis le site',
             message=contenu,
             from_email=email,
-            recipient_list=['gablauric@gmail.com'],
+            recipient_list=['laurilanscrl@gmail.com'],
             fail_silently=False,
         )
 
