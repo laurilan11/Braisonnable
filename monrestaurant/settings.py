@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dev-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['braisonnable.be', 'www.braisonnable.be', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['braisonnable.be', 'www.braisonnable.be']
 #os.environ.get('ALLOWED_HOSTS', '').split(','), 'localhost', '127.0.0.1',
 
 
