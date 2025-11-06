@@ -43,6 +43,28 @@
     <a href="{% url 'menu' %}" class="btn-outline">Voir le menu complet</a>
 </section>
 
+<section class="home-gallery">
+  <h2>Découvrez Braisonnable</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="{% static 'images/entreedroit.png' %}" alt="Entrée du restaurant">
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/PHOTO-2025-11-05-15-10-43 6.jpg' %}" alt="Salle intérieure">
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/photobar.jpg' %}" alt="Ambiance chaleureuse">
+    </div>
+    <div class="gallery-item">
+      <video controls muted loop>
+        <source src="{% static 'videos/VIDEO-2025-11-05-15-10-44.mp4' %}" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture vidéo.
+      </video>
+    </div>
+  </div>
+  <a href="{% url 'about' %}" class="btn-outline">Voir plus de photos</a>
+</section>
+
 <section class="contact-cta">
     <h2>Une table vous attend</h2>
     <p>Contactez-nous pour toute question ou réservez directement en ligne. Nous serons ravis de vous accueillir.</p>
@@ -53,7 +75,15 @@
                 1070 Anderlecht <br> <br>
                 Mail : <a href="mailto:braisonnable_steakhouse@outlook.com">braisonnable_steakhouse@outlook.com</a> <br>
                 <a href="tel:+3226483151">Tél: 02 648 31 51 </a><br>
-            </p>
+<p>Réseaux sociaux :</p>
+<div class="social-icons">
+  <a href="https://www.facebook.com/people/Braisonnable-Steakhouse/pfbid02JsByxRDvPv9mH7QfYbxCpPRNnUGEhYjqviX1T1G1mAzk9FAwdHfgGL8pzNmUg7d2l">
+    <img src="{% static 'images/facebookblanc.png' %}" alt="Facebook" />
+  </a>
+  <a href="https://www.instagram.com/braisonnable_steakhouse/?igsh=dTh3ZnR4NG02NnB6">
+    <img src="{% static 'images/instablanc.png' %}" alt="Instagram" />
+  </a>
+</div>
             <a href="{% url 'reservations' %}" class="btn-primary">Réserver une table</a>
             <a href="{% url 'contact' %}" class="btn-primary">Contactez-nous</a>
         </div>

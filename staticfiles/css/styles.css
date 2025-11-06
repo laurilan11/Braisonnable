@@ -281,6 +281,63 @@ nav a {
     }
 }
 
+/* ===================== GALERIE ACCUEIL ===================== */
+.home-gallery {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.home-gallery h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 10px;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(85%);
+}
+
+.home-gallery .btn-outline {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.home-gallery .btn-outline:hover {
+  background-color: white;
+  color: black;
+}
+
 /* ========== ABOUT PAGE ========== */
 
 .about_titre {
@@ -392,7 +449,46 @@ nav a {
   from {opacity: 0.9;}
   to {opacity: 1;}
 }
+/* ===================== GALERIE ===================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
 
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 10px;
+}
+
+/* Effet au survol */
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(85%);
+}
+
+/* Optionnel : légère ombre */
+.gallery-item {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.gallery-item video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
 /* Section Équipe */
 .team-section {
   background-color: #ffffff;
@@ -777,6 +873,27 @@ main.page-secondaire {
     height: 100%;
     border: 0;
 }
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* centre les icônes */
+    gap: 1.5rem; /* espace entre elles */
+    margin-top: 1rem;
+}
+
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1); /* rend l’icône blanche si elle est noire */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
 
 /* ===================== RESERVATIONS PAGE ===================== */
 /* ===== Section Réservation simplifiée ===== */
