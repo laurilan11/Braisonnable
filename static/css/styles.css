@@ -625,7 +625,7 @@ main.page-secondaire {
     margin-bottom: 2rem;
 }
 
-.menu-navigation{
+.menu-navigation, .menu-navigation_vin {
     background-color : #444444;
     position: sticky;
     display: flex;
@@ -655,6 +655,13 @@ main.page-secondaire {
     gap: 20px;                /* espace entre les liens */
 }
 
+.menu-nav_vin {
+    display: flex;
+    justify-content: center;  /* centre les liens horizontalement */
+    flex-wrap: nowrap;        /* par défaut, tout sur une seule ligne */
+    gap: 5px;                /* espace entre les liens */
+}
+
 .menu-nav a {
     color: #CC0000;
     font-weight: normal;
@@ -663,7 +670,15 @@ main.page-secondaire {
     position: relative;
 }
 
-.menu-nav a::after {
+.menu-nav_vin a {
+    color: #CC0000;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+}
+
+.menu-nav a::after, .menu-nav_vin a::after{
     content: "";
     display: block;
     width: 0%;
@@ -673,7 +688,7 @@ main.page-secondaire {
     margin-top: 5px;
 }
 
-.menu-nav a:hover::after {
+.menu-nav a:hover::after,.menu-nav_vin a:hover::after {
     width: 100%;
 }
 
@@ -730,7 +745,25 @@ main.page-secondaire {
     font-size: 1rem;
     color: white;
 }
+@media (max-width: 1410px) and (min-width: 1360px) {
+    .menu-nav_vin a {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 820px) {
+     .menu-navigation_vin {
+        height : 150px;
 
+    }
+    .menu-nav_vin  {
+        flex-wrap: wrap; /* autorise plusieurs lignes */
+    }
+    .menu-nav_vin a {
+        font-size: 0.8rem;
+        flex: 0 0 23%; /* chaque lien prend exactement un tiers de la ligne */
+        text-align: center;
+    }
+}
 /* Responsive : 1 colonne sur petit écran */
 @media (max-width: 768px) {
     .menu-list {
@@ -756,7 +789,7 @@ main.page-secondaire {
         height : 150px;
 
     }
-    .menu-nav a {
+    .menu-nav a{
         font-size: 0.8rem;
         flex: 0 0 23%; /* chaque lien prend exactement un tiers de la ligne */
         text-align: center;
@@ -764,12 +797,59 @@ main.page-secondaire {
 }
 
 @media (max-width: 400px) {
-    .menu-nav a {
+    .menu-nav a, .menu-nav_vin a {
         font-size: 0.7rem;
         flex: 0 0 15%; /* chaque lien prend exactement un tiers de la ligne */
         text-align: center;
     }
 }
+
+/* Position du dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    cursor: pointer;
+}
+
+/* Sous-menu caché */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    min-width: 180px;
+    z-index: 10;
+}
+
+/* Chaque lien du sous-menu */
+.dropdown-menu li a {
+    color: #b30000;
+    display: block;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+.dropdown-menu li a:hover {
+    background: #b30000; /* rouge */
+    color: white;
+}
+
+/* Apparition au survol sur ordinateur */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Mobile : on ouvre quand le menu principal est ouvert */
+.nav-links.open .dropdown-menu {
+    position: static;
+    box-shadow: none;
+}
+
 
 /* ===================== CONTACT CTA ===================== */
 .contact-cta {

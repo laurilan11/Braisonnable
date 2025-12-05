@@ -15,6 +15,10 @@ def home(request):
 def menu(request):
     return render(request, 'restaurant/menu.html')
 
+def carte_des_vins(request):
+    return render(request, "restaurant/carte_des_vins.html")
+
+
 from datetime import time, timedelta, datetime
 
 

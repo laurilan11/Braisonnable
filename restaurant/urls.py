@@ -9,4 +9,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('messageenvoye/', views.recrute, name='messageenvoye'),
     path('reservation_success/', views.reservation_success, name='reservation_success'),
+    path("carte-des-vins/", views.carte_des_vins, name="carte_des_vins"),
+
 ]
