@@ -72,6 +72,44 @@ nav a {
     color: #CC0000;
 }
 
+
+.closure-banner {
+    position: sticky;
+    top: 140px; /* 👈 hauteur du header */
+    letter-spacing: 0.03em;
+    background-color: #8b0000; /* rouge profond */
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    z-index: 900;
+}
+
+.closure-section {
+    background: black;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.closure-image {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.closure-contact {
+    background-color: #111;
+    color: #f5f5f5;
+    border: 1px solid #8b0000;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+}
+
 /* === MENU BURGER === */
 .menu-toggle {
     display: none;
@@ -632,7 +670,7 @@ main.page-secondaire {
     width: 100%;
     z-index: 10;
     align-items: center;
-    top: 140px;
+    top: 185px;
     transform: translateZ(0px);
     will-change: transform;
 }
@@ -763,6 +801,9 @@ main.page-secondaire {
         flex: 0 0 23%; /* chaque lien prend exactement un tiers de la ligne */
         text-align: center;
     }
+        .menu-navigation, .menu-navigation_vin {
+        top: 189px;
+    }
 }
 /* Responsive : 1 colonne sur petit écran */
 @media (max-width: 768px) {
@@ -795,6 +836,13 @@ main.page-secondaire {
         text-align: center;
     }
 }
+
+@media (max-width: 667px) {
+    .menu-navigation, .menu-navigation_vin {
+        top: 195px;
+    }
+}
+
 
 @media (max-width: 400px) {
     .menu-nav a {
