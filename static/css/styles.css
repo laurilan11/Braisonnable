@@ -670,7 +670,7 @@ main.page-secondaire {
     width: 100%;
     z-index: 10;
     align-items: center;
-    top: 185px;
+    top: 140px;
     transform: translateZ(0px);
     will-change: transform;
 }
@@ -732,7 +732,7 @@ main.page-secondaire {
 
 /* === Section principale du menu === */
 .menu-section {
-    scroll-margin-top: 180px; /* ajustable à la hauteur de ton header */
+    scroll-margin-top: 190px; /* ajustable à la hauteur de ton header */
     max-width: 1200px;
     margin: 80px auto;
     padding: 0 20px;
@@ -802,7 +802,7 @@ main.page-secondaire {
         text-align: center;
     }
         .menu-navigation, .menu-navigation_vin {
-        top: 189px;
+        top: 140px;
     }
 }
 /* Responsive : 1 colonne sur petit écran */
@@ -837,12 +837,12 @@ main.page-secondaire {
     }
 }
 
-@media (max-width: 667px) {
+/* @media (max-width: 667px) {
     .menu-navigation, .menu-navigation_vin {
         top: 195px;
     }
 }
-
+*/
 
 @media (max-width: 400px) {
     .menu-nav a {
